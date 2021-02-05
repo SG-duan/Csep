@@ -1,0 +1,2097 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <title>Csep 个人主页</title>
+    <meta charset="utf-8" http-equiv="Content-Type" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" id="viewport" name="viewport" />
+    <link href="https://image.flaticon.com/icons/svg/786/786121.svg" rel="shortcut icon" type="image/x-icon" />
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.bootcss.com/font-awesome/5.13.0/css/all.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/firacode@5.2.0/distr/fira_code.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/@fontsource/metropolis@4.1.0/all.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/noto-sans-sc@11.0.1/all.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/typeface-libre-barcode-128-text@1.1.13/index.min.css" rel="stylesheet" />
+    <style>
+         ::-webkit-scrollbar {
+            width: 7px;
+        }
+        
+         ::-webkit-scrollbar-thumb {
+            background: rgb(248, 249, 250);
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+        }
+        
+         ::-webkit-scrollbar-track {
+            border-radius: 0;
+            background: rgb(43, 125, 233);
+        }
+        
+         ::-webkit-scrollbar-thumb:hover {
+            background: rgb(230, 242, 255);
+        }
+        
+         ::-webkit-scrollbar-thumb:active {
+            background: rgb(193, 219, 251);
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Metropolis", "Noto Sans SC", sans-serif;
+            font-weight: 500;
+            overflow-y: scroll !important;
+        }
+        
+        h1 small {
+            font-weight: 500;
+            font-size: 33.5px;
+        }
+        
+        h1 span {
+            font-weight: 400;
+            font-family: "Metropolis", "Noto Sans SC", sans-serif;
+            font-size: 50px;
+        }
+        
+        * {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+        
+        div[data-name="mojs-shape"] {
+            z-index: 214783647;
+            pointer-events: none;
+        }
+        
+        span {
+            color: #2b7de9;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+        }
+        
+        .spr {
+            color: rgb(222, 82, 70);
+        }
+        
+        .spg {
+            color: rgb(23, 160, 93);
+        }
+        
+        .spb {
+            color: rgb(75, 139, 245);
+        }
+        
+        .spy {
+            color: rgb(255, 206, 67);
+        }
+        
+        .span-moz {
+            font-family: 'Metropolis';
+            color: #5397EE;
+        }
+        
+        span:hover {
+            filter: opacity(30%);
+        }
+        
+        .card-header,
+        .list-group-item-light {
+            border: none !important;
+            border-radius: 5px !important;
+            background-color: #2b7de9;
+            transition: all 0.25s;
+            -webkit-transition: all 0.25s;
+            -moz-transition: all 0.25s;
+        }
+        
+        .list-group-item-light {
+            background-color: #2b7de9;
+            color: white;
+            margin-bottom: 5px;
+        }
+        
+        .card {
+            border: none !important;
+            background-color: #2b7de9;
+            color: white;
+            margin-bottom: 5px;
+        }
+        
+        .card-header:hover {
+            background-color: rgb(43, 91, 154) !important;
+        }
+        
+        .list-group-item-light:hover {
+            background-color: rgb(43, 91, 154) !important;
+        }
+        
+        .card-body {
+            background-color: rgb(230, 242, 255);
+            color: black;
+            border-radius: 5px !important;
+            border: solid 2.5px #2b7de9;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+        }
+        
+        .card-body:hover {
+            background-color: #2b7de9;
+            color: white;
+        }
+        
+        .card-body:hover span {
+            color: rgb(230, 242, 255);
+        }
+        
+        .element {
+            overflow: -moz-scrollbars-none;
+            -ms-overflow-style: none;
+        }
+        
+        .btn-link,
+        .btn-link:hover,
+        .btn-link:active,
+        .btn-link:visited {
+            text-decoration: none;
+        }
+        
+        .jumbotron {
+            background-color: rgb(241, 243, 244) !important;
+        }
+        
+        .modal-content {
+            min-height: 160px;
+            border: 1px solid rgb(248, 249, 250) !important;
+            box-shadow: 0px 2px 1px rgb(248, 249, 250) !important;
+        }
+        
+        .modal-backdrop,
+        .modal {
+            background-color: rgba(248, 249, 250, 0.5);
+            position: fixed;
+            backdrop-filter: blur(15px);
+        }
+        
+        #window-drop {
+            background-color: rgba(248, 249, 250, 0.5);
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            z-index: 10000;
+            backdrop-filter: blur(15px);
+        }
+        
+        #line-main {
+            width: 65px;
+            height: 6px;
+            border-radius: 10px;
+            position: absolute;
+        }
+        
+        .modal-backdrop {
+            z-index: 1000;
+        }
+        
+        .btn-link-first {
+            color: #336699 !important;
+        }
+        
+        .btn-modal-start {
+            min-width: 200px;
+            height: 50px;
+        }
+        
+        .btn:not(.nav-link) {
+            transition: background-color 0.25s, color 0.25s;
+            -webkit-transition: background-color 0.25s, color 0.25s;
+            -moz-transition: background-color 0.25s, color 0.25s;
+        }
+        
+        .btn:hover:not(.nav-link),
+        .btn:active:not(.nav-link),
+        .btn:focus:not(.nav-link) {
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+        }
+        
+        .btn:hover:not(.btn-link-first),
+        .btn:active:not(.btn-link-first) {
+            background-color: #2b7de9 !important;
+            color: white !important;
+        }
+        
+        .nav-link {
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+        }
+        
+        .nav-link:active {
+            background-color: #2b7de9;
+        }
+        
+        .navbar-default {
+            background-color: rgb(248, 249, 250);
+        }
+        
+        input,
+        input:hover,
+        input:disabled,
+        input:read-only,
+        input:focus {
+            background-color: white !important;
+            box-shadow: none !important;
+            border-style: none none solid none !important;
+            border-color: #2b7de9 !important;
+            border-width: 2px !important;
+            border-radius: 4px;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            z-index: 50;
+        }
+        
+        input:focus,
+        input:hover {
+            background-color: rgb(230, 242, 255) !important;
+        }
+        
+        #upnav {
+            z-index: 100;
+        }
+        
+        #main-tab-img {
+            width: 20px;
+            height: 20px;
+            margin-top: -2px;
+            -webkit-filter: none;
+            -moz-filter: none;
+            filter: none;
+            -moz-transition: all 0.25s;
+            -webkit-transition: all 0.25s;
+            transition: all 0.25s;
+        }
+        
+        #main-tab-img:hover {
+            -webkit-filter: opacity(20%);
+            -moz-filter: opacity(20%);
+            filter: opacity(20%);
+        }
+        
+        #bg-audio {
+            -webkit-transition: width 0.5s, right 0.25s;
+            -moz-transition: width 0.5s, right 0.25s;
+            transition: width 0.5s, right 0.25s;
+            z-index: 200;
+            right: 20px;
+            border: none !important;
+            outline: none !important;
+        }
+        
+        input[type="radio"]+label::before {
+            content: "\a0";
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 18px;
+            width: 0.75em;
+            height: 0.75em;
+            border-radius: 50%;
+            border: 2px solid rgb(230, 242, 255) !important;
+            background-color: rgb(230, 242, 255);
+            background-clip: content-box;
+            padding: 0.05em;
+            text-indent: 0.15em;
+            line-height: 0;
+        }
+        
+        input[type="radio"]:checked+label::before,
+        input[type="radio"]:hover+label::before {
+            border: 2px solid #2b7de9 !important;
+            background-color: #2b7de9;
+            background-clip: content-box;
+            padding: 0.05em;
+            box-shadow: none !important;
+        }
+        
+        input[type="radio"] {
+            position: absolute;
+            clip: rect(0, 0, 0, 0);
+        }
+        
+        .btn-group-width div button {
+            max-width: 55px;
+            min-width: 55px;
+            width: 55px;
+        }
+        
+        .btn-group-width div input {
+            box-shadow: none !important;
+        }
+        
+        .work-mn {
+            width: 300px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 30px;
+            border: blue solid 0px;
+        }
+        
+        .dropdown-item {
+            -moz-transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+        }
+        
+        .dropdown-item:active,
+        .dropdown-item:hover {
+            background-color: #2b7de9;
+            border: none !important;
+            outline: none !important;
+            color: rgb(102, 153, 204);
+        }
+        
+        .dropdown-toggle {
+            width: 90px;
+        }
+        
+        .dropdown-menu {
+            border: solid 2px rgb(248, 249, 250) !important;
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+            outline: none !important;
+        }
+        
+        @media (min-width: 800px) {
+            .jumbotron-mc {
+                max-height: 250px;
+                height: 250px;
+            }
+            .head-mc {
+                margin-top: 50px;
+            }
+            .blockem-mc,
+            .blockem-mc-center {
+                margin-left: 5px;
+            }
+            .work-mc {
+                width: 300px;
+                margin-left: -10px;
+            }
+            .list-mc {
+                max-width: 300px;
+            }
+            .btn-submit-gp {
+                margin-left: 0px;
+                width: 300px;
+                height: 50px;
+            }
+            .control-mc {
+                margin-left: 1em;
+                max-width: 200px;
+            }
+            #bg-audio:hover,
+            #bg-audio:active {
+                width: 550px;
+                right: 0px;
+                border: none !important;
+                outline: none !important;
+            }
+            #bg-audio {
+                position: fixed;
+                right: 20px;
+                max-width: 500px;
+                width: 240px;
+            }
+            .custom-control-label {
+                margin-left: 2em;
+            }
+        }
+        
+        @media (max-width: 800px) {
+            .jumbotron-mc {
+                height: 250px;
+            }
+            h1,
+            h2 {
+                text-align: center;
+            }
+            p:not(#user) {
+                margin-left: 50px;
+                font-size: 15px;
+            }
+            h5 {
+                margin-left: 20px;
+            }
+            .list-mc {
+                max-width: 250px;
+            }
+            .blockem-mc {
+                margin-left: 70px;
+            }
+            .blockem-mc-center {
+                left: 72.5%;
+                min-width: 200px;
+            }
+            .work-mc {
+                width: 300px;
+                margin: 0 auto;
+                text-align: center;
+                line-height: 30px;
+                border: blue solid 0px;
+            }
+            .head-mc {
+                margin-top: 20px;
+            }
+            .collapse-mc {
+                width: 200px;
+                margin-left: 60px;
+            }
+            .p-mc {
+                margin-left: 80px;
+            }
+            .text-mc {
+                margin-left: 50px;
+            }
+            .custom-control-label {
+                margin-left: 6em;
+            }
+            .btn-div-mc {
+                margin: 0 auto;
+                text-align: center;
+                line-height: 30px;
+                border: blue solid 0px;
+            }
+            .control-mc {
+                margin-left: 3.5em;
+                max-width: 200px;
+            }
+            #bg-audio {
+                position: fixed;
+                right: -210px;
+            }
+            #pht h5 {
+                margin-left: 50px;
+            }
+        }
+        
+        #bhm:hover,
+        #bht:hover,
+        #bhg:hover,
+        #bho:hover {
+            background-color: rgb(43, 125, 233) !important;
+            color: white !important;
+        }
+        
+        #bho:active,
+        #bht:active,
+        #bhg:active,
+        #bhm:active {
+            background-color: rgb(43, 125, 233) !important;
+        }
+        
+        .btn-circle {
+            width: 92.5px;
+            height: 60px;
+            font-size: 15px;
+            border-radius: 7.5%;
+            z-index: 500;
+            position: fixed;
+            left: 20px;
+            bottom: 35px;
+            background-color: #2B7DE9 !important;
+            border: none;
+            outline: none;
+            color: white !important;
+            transition: color 0.5s, background-color 0.5s;
+            -webkit-transition: color 0.5s, background-color 0.5s;
+            -moz-transition: color 0.5s, background-color 0.5s;
+        }
+        
+        .btn-circle:hover {
+            background-color: #CCE5FF !important;
+            color: #004085 !important;
+            border: none;
+            outline: none;
+        }
+        
+        .canselect {
+            user-select: text !important;
+            -webkit-user-select: text !important;
+            -moz-user-select: text !important;
+            -webkit-touch-callout: text !important;
+        }
+        
+        .text-secret {
+            font-family: "Libre Barcode 128 Text";
+            font-size: 35px;
+        }
+    </style>
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery-color/2.1.2/jquery.color.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery-color/2.1.2/jquery.color.min.js"></script>
+    <script defer="defer">
+        lineI = 1;
+        var btncolor = ["rgb(66, 153, 244)", "rgb(234, 67, 53)", "rgb(251, 188, 5)", "rgb(52, 168, 83)", ];
+        for (i in btncolor) btncolor[i] = "rgb(43, 125, 233)";
+        $(document).ready(function() {
+            $("#window-drop").show();
+            $("#line-main").animate({
+                marginTop: "50px",
+                marginLeft: "30px",
+                left: "0px",
+                backgroundColor: btncolor[0],
+            });
+            setTimeout(function() {
+                $("#window-drop").slideUp();
+            }, 200);
+            $("#bhm").click(function() {
+                lineI = 1;
+                moveline(1);
+            });
+            $("#bht").click(function() {
+                lineI = 2;
+                moveline(2);
+            });
+            $("#bhg").click(function() {
+                lineI = 3;
+                moveline(3);
+            });
+            $("#bho").click(function() {
+                lineI = 4;
+                moveline(4);
+            });
+            $("#bhm").hover(function() {
+                moveline(1);
+            }, function() {
+                moveline(lineI, "slow");
+            });
+            $("#bht").hover(function() {
+                moveline(2);
+            }, function() {
+                moveline(lineI, "slow");
+            });
+            $("#bhg").hover(function() {
+                moveline(3);
+            }, function() {
+                moveline(lineI, "slow");
+            });
+            $("#bho").hover(function() {
+                moveline(4);
+            }, function() {
+                moveline(lineI, "slow");
+            });
+        });
+
+        function Gets(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            return (r != null ? unescape(r[2]) : null);
+        }
+
+        function rechange() {
+            var x = document.getElementsByTagName("input");
+            for (var i = 0; i < x.length; i++) {
+                x[i].checked = false;
+            }
+            for (var i = 0; i < x.length; i++) {
+                if (x[i].className.indexOf("normalRadio") != -1) x[i].checked = true;
+                else x[i].checked = false;
+            }
+        }
+
+        function moveline(i, s = "fast") {
+            $("#line-main").stop();
+            $("#line-main").animate({
+                left: String((i - 1) * 94) + "px",
+                backgroundColor: btncolor[i - 1],
+            }, s);
+        }
+        var obj = true;
+        document.onreadystatechange = function() {
+            if (document.readyState == "complete") {
+                document.body.style = "overflow-x:hidden; display:block";
+            } else {
+                document.body.style = "overflow-x:hidden; display:none";
+            }
+        };
+        window.onbeforeunload = function() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+            if (obj) return false;
+        };
+
+        var user = "U",
+            uname, on = false,
+            data = false;
+        localStorage.removeItem("reset");
+
+        function titleCase(str) {
+            str = String(str).replace(/(^\s*)|(\s*$)/g, "");
+            var re = str.substring(0, 1).toUpperCase();
+            for (i in str)
+                if (i != 0 && i <= 10) re += str.charAt(i).toLowerCase();
+            return re;
+        }
+
+        function nameful() {
+            var value = titleCase(document.getElementById("controlInput").value);
+            console.log(value);
+            if (value != "") {
+                localStorage.setItem(user, value);
+                localStorage.removeItem("temp");
+            }
+            setTimeout(function() {
+                document.getElementById("controlInput").value = null;
+                testStorage();
+                $("#myModal").modal("show");
+            }, 350);
+        }
+
+        function testStorage(n = 1) {
+            $("#okBtn").show();
+            $("#nameInput").show();
+            $("#tempText").hide();
+            if (Gets('user') != null)
+                localStorage.setItem(user, titleCase(Gets('user')));
+            var haveUser = localStorage.getItem(user) != null && localStorage.getItem(user) != 'Null';
+            var haveTemp = localStorage.getItem("temp") != null && data == false;
+            var haveReset = localStorage.getItem("reset") == null && (haveUser || haveTemp);
+            if ((haveUser || haveTemp) && n != -1) {
+                if (haveTemp) {
+                    localStorage.setItem(user, localStorage.getItem("temp"));
+                    localStorage.removeItem("temp");
+                }
+                $("#nameInput").hide();
+                var text = document.getElementById("okText");
+                if (haveTemp) {
+                    $("#tempText").show();
+                    data == true;
+                }
+                if (haveReset) {
+                    var a = localStorage.getItem(user);
+                    text.innerHTML = "<span id='modalSpan'></span>, 欢迎回到 Csep 个人主页!";
+                    document.getElementById("modalSpan").innerText = a;
+                    localStorage.setItem(user, localStorage.getItem(user));
+                }
+                localStorage.setItem("reset", "ok");
+            } else {
+                var text = document.getElementById("okText");
+                text.innerHTML =
+                    "欢迎来到<span class='spb'>C</span><span class='spr'>s</span><span class='spy'>e</span><span class='spg'>p</span> 个人主页!";
+                var btn = document.getElementById("okBtn");
+                $("#okBtn").hide();
+                localStorage.removeItem("reset");
+            }
+            console.log("RaiseModal");
+            if (n == 1) setTimeout(function() {
+                $("#myModal").modal("show");
+            }, 350);
+            else if (n == 2) {
+                setTimeout(function() {
+                    $("#myModal").modal("show");
+                }, 100);
+            }
+        }
+
+        function reclear() {
+            data = true;
+            localStorage.setItem("temp", localStorage.getItem(user));
+            localStorage.removeItem(user);
+            setTimeout(function() {
+                testStorage(-1);
+                $("#myModal").modal("show");
+            }, 350);
+        }
+    </script>
+</head>
+
+<body style="overflow-x: hidden; overflow-y: hidden" onload="testStorage(2);">
+    <button id="test" class="btn-circle">回到顶部</button>
+    <script>
+        var timer = null;
+        test.onclick = function() {
+            cancelAnimationFrame(timer);
+            var startTime = +new Date();
+            var b = document.body.scrollTop || document.documentElement.scrollTop;
+            var d = 200;
+            var c = b;
+            timer = requestAnimationFrame(function func() {
+                var t = d - Math.max(0, startTime - +new Date() + d);
+                document.documentElement.scrollTop = document.body.scrollTop = (t * -c) / d + b;
+                timer = requestAnimationFrame(func);
+                if (t == d) {
+                    cancelAnimationFrame(timer);
+                }
+            });
+        };
+    </script>
+    <style>
+        #musicMain {
+            overflow: hidden;
+            position: absolute;
+            border-radius: 100px;
+            height: 70px;
+            width: 70px;
+            background-color: rgb(248, 249, 250);
+            right: 0px;
+            transition: all 1s;
+            -webkit-transition: all 1s;
+            -moz-transition: all 1s;
+            transition-delay: 200ms;
+            -webkit-transition-delay: 200ms;
+            -moz-transition-delay: 200ms;
+        }
+        
+        #musicDiv {
+            position: fixed;
+            border-radius: 100px;
+            height: 70px;
+            width: 70px;
+            right: 20px;
+            top: 10px;
+            background-color: rgb(248, 249, 250);
+            transition: all 1s;
+            -webkit-transition: all 1s;
+            -moz-transition: all 1s;
+            transition-delay: 200ms;
+            -webkit-transition-delay: 200ms;
+            -moz-transition-delay: 200ms;
+            z-index: 9999;
+        }
+        
+        #musicDiv:hover {
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+            width: 390px;
+            right: 0px;
+        }
+        
+        #musicTrans {
+            position: absolute;
+            margin-left: 33.5px;
+            margin-top: 28.5px;
+            border: 5px solid;
+            border-color: transparent transparent transparent rgb(89, 89, 89);
+        }
+        
+        #musicCircle {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            background-color: rgb(248, 249, 250);
+            border-radius: 100px;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+        }
+        
+        #musicCircle:hover {
+            background-color: rgb(43, 125, 233);
+        }
+        
+        #musicCircle:hover #musicTrans {
+            border-color: transparent transparent transparent rgb(248, 249, 250);
+        }
+        
+        #musicCircle:hover #musicTrans2 {
+            border-left: 3px solid rgb(248, 249, 250);
+            border-right: 3px solid rgb(248, 249, 250);
+        }
+        
+        #musicText {
+            color: rgb(248, 249, 250);
+            font-size: 15px;
+            text-align: center;
+            text-indent: 100px;
+            margin-top: 22.5px;
+            margin-left: 50px;
+            white-space: nowrap;
+            transition: all 0.5s;
+            -webkit-transition: all 1.5s;
+            -moz-transition: all 1.5s;
+        }
+        
+        #musicDiv:hover #musicMain {
+            width: 330px;
+            right: 60px;
+        }
+        
+        #musicDiv:hover #musicMain #musicText {
+            color: rgb(248, 249, 250);
+            text-indent: 1px;
+        }
+        
+        #musicTrans2 {
+            position: absolute;
+            margin-left: 31.5px;
+            margin-top: 28.5px;
+            width: 8px;
+            height: 10px;
+            border-left: 3px solid rgb(89, 89, 89);
+            border-right: 3px solid rgb(89, 89, 89);
+        }
+        
+        #musicDiv:hover #musicCircle #musicTrans {
+            border-color: transparent transparent transparent rgb(248, 249, 250);
+        }
+        
+        #musicDiv:hover #musicCircle #musicTrans2 {
+            border-left: 3px solid rgb(248, 249, 250);
+            border-right: 3px solid rgb(248, 249, 250);
+        }
+        
+        #musicDiv:hover #musicCircle {
+            background-color: rgb(43, 125, 233);
+        }
+        
+        #musicDiv:hover {
+            background-color: rgb(43, 125, 233);
+        }
+        
+        #musicDiv:hover #musicMain {
+            background-color: rgb(43, 125, 233);
+        }
+    </style>
+    <script>
+        var musicI = false;
+        $(document).ready(function() {
+            $("#musicTrans2").hide();
+            $("#musicCircle").click(function() {
+                musicI = !musicI;
+                if (musicI) {
+                    $("#musicTrans").fadeOut();
+                    $("#musicTrans2").fadeIn();
+                    document.getElementById('bg-audio').play()
+                } else {
+                    $("#musicTrans2").fadeOut()
+                    $("#musicTrans").fadeIn();
+                    document.getElementById('bg-audio').pause()
+                };
+            });
+        });
+    </script>
+    <audio id="bg-audio" loop="true" preload="meta">
+        <source
+            src="http://antiserver.kuwo.cn/anti.s?useless=/resource/&amp;format=mp3&amp;rid=MUSIC_22828881&amp;response=res&amp;type=convert_url&amp;"
+        />
+    </audio>
+    <div class="alert alert-primary alert-dismissible fade show" style="border: none; position: fixed; bottom: 6.2rem; z-index: 10000; left: 20px;">
+        <button type="button" class="btn close" data-dismiss="alert">&times;</button> &emsp;页面依赖 WebCDN 内容, 请连接好网络, 耐心等待加载完成...&emsp;
+    </div>
+    <div class="alert alert-primary alert-dismissible fade show" style="border: none; position: fixed; bottom: 10.4rem; z-index: 10000; left: 20px; ">
+        <button type="button" class="btn close" data-dismiss="alert">&times;</button> &emsp;推荐您使用 Windows 10 下的 <span class="span-moz">Mozilla Firefox </span> 浏览器&ensp;<span onclick="download();" , style="cursor: pointer;"><i
+                class="fa fa-arrow-circle-down"
+                aria-hidden="true"
+            ></i></span>&emsp;
+    </div>
+    <div id="musicDiv">
+        <div id="musicMain">
+            <div id="musicText">Rolling Sky&emsp;E-labyrinth</div>
+        </div>
+        <div id="musicCircle">
+            <div id="musicTrans"></div>
+            <div id="musicTrans2"></div>
+        </div>
+    </div>
+    <button class="btn btn-light btn-modal-start" id="user" style="position: fixed; bottom: 0; right: 0; z-index: 400;" onclick="clickModal();"></button>
+    <style>
+        #div-left {
+            width: 240px;
+            height: 100%;
+            background: rgb(230, 242, 255);
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            padding: 15px 10px;
+            text-align: center;
+        }
+        
+        #line-left {
+            top: 0px;
+            left: 8px;
+            position: fixed;
+            height: 100%;
+            width: 8px;
+            background: rgb(43, 122, 227);
+        }
+        
+        #form-left {
+            width: 0px;
+            height: 0px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: transparent transparent transparent rgb(43, 125, 233);
+            position: fixed;
+            margin-top: 21.25%;
+            transition: transform 0.25s;
+            -webkit-transition: -webkit-transform 0.25s;
+            -moz-transition: -moz-transform 0.25s;
+        }
+        
+        #left * {
+            z-index: 9000000;
+        }
+    </style>
+    <div id="left">
+        <div id="div-left">
+            <h5>常用网址: </h5>
+            <a target="_blank" href="https://www.baidu.com/">百度</a><br />
+            <a target="_blank" href="https://www.zhihu.com/">知乎</a><br />
+            <a target="_blank" href="https://www.qq.com/">腾讯</a><br />
+            <a target="_blank" href="https://wx.qq.com/">微信</a><br />
+            <a target="_blank" href="https://www.163.com/">网易</a><br />
+            <a target="_blank" href="https://www.sina.com.cn/">新浪</a><br />
+            <a target="_blank" href="https://www.sohu.com/">搜狐</a><br />
+            <a target="_blank" href="https://www.bilibili.com/">BiliBili</a><br />
+            <a target="_blank" href="https://www.acfun.cn/">Acfun</a><br />
+            <a target="_blank" href="https://www.kuaishou.com/">快手</a><br />
+            <a target="_blank" href="https://www.douyin.com/">抖音</a><br />
+            <a target="_blank" href="https://www.huya.com/">虎牙直播</a><br />
+            <a target="_blank" href="https://www.youku.com/">优酷</a><br />
+            <a target="_blank" href="https://www.iqiyi.com/">爱奇艺</a><br />
+            <a target="_blank" href="https://www.kuwo.cn/">酷我音乐</a><br />
+            <a target="_blank" href="https://www.csdn.net/">CSDN</a><br />
+            <a target="_blank" href="https://www.google.com.hk/">Google</a><br />
+            <a target="_blank" href="https://github.com/">Github</a><br />
+            <a target="_blank" href="https://www.cnblogs.com/">博客园</a><br />
+            <a target="_blank" href="https://www.microsoft.com/">Microsoft</a><br />
+            <a target="_blank" href="https://www.mozilla.org/en-US/">Mozilla</a><br />
+            <a target="_blank" href="http://www.bootcdn.cn/">BootCDN</a><br />
+            <a target="_blank" href="https://fa5.dashgame.com/">Font Awesome</a><br />
+            <a target="_blank" href="https://www.jsdelivr.com/">JSdelivr</a><br />
+        </div>
+        <div id="line-left"></div>
+        <div id="form-left"></div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            function slideLeft() {
+                $("#div-left").stop();
+                $("#form-left").stop();
+                $("#line-left").stop();
+                $("#div-left").animate({
+                    marginLeft: "-240px"
+                });
+                $("#line-left").animate({
+                    marginLeft: "-10px"
+                });
+                $("#form-left").animate({
+                    marginLeft: "5px"
+                }, function() {
+                    $("#form-left").css({
+                        'transform': 'rotateY(0deg)',
+                        'padding-right': '0px'
+                    })
+                });
+            }
+
+            function slideRight() {
+                $("#div-left").stop();
+                $("#form-left").stop();
+                $("#line-left").stop();
+                $("#div-left").animate({
+                    marginLeft: "0px"
+                });
+                $("#line-left").animate({
+                    marginLeft: "230px"
+                });
+                $("#form-left").animate({
+                    marginLeft: "255px"
+                }, function() {
+                    $("#form-left").css({
+                        'transform': 'rotateY(540deg)',
+                        'padding-right': '10px'
+                    })
+                });
+            }
+            slideLeft();
+            $("#left").mouseout(function() {
+                slideLeft();
+            });
+            $("#left").mouseover(function() {
+                slideRight();
+            });
+        });
+    </script>
+    <div class="jumbotron text-center jumbotron-mc" style="min-height: 100px; z-index: 300"><br />
+        <h1><span class="spb">C</span><span class="spr">s</span><span class="spy">e</span><span class="spg">p</span>
+            <small>个人主页</small></h1>
+        <h5 style="margin-left: 150px">&ensp;-&ensp; 致力于更好</h5>
+    </div>
+    <div class="modal fade text-center" id="myModal" tabindex="1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" @touchmove.prevent>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body"><br />
+                    <h5 id="okText"> 欢迎来到<span class="spb">C</span><span class="spr">s</span><span class="spy">e</span><span class="spg">p</span> 个人主页!</h5>
+                    <h6 id="tempText" style="left: 0"><span><i class="fa fa-check"></i></span> 已保存上次的数据</h6><br />
+                    <div class="input-group mb-4 work-mn" id="nameInput"><input type="text" class="form-control control-mc" placeholder="Username" id="controlInput" />
+                        <div class="input-group-append"><button class="btn btn-light" class="btn btn-light" data-dismiss="modal" type="submit" onclick="console.log('DropModal'); nameful();"> 完成</button></div>
+                    </div>
+                    <div id="okBtn"><button type="button" id="clBtn" class="btn btn-light btn-modal-start" class="btn btn-light" data-dismiss="modal" onclick="console.log('DropModal');"> 关闭</button><button type="button" id="reBtn" class="btn btn-light btn-modal-start"
+                            class="btn btn-light" data-dismiss="modal" onclick="reclear();"> 清除登录</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-default navbar-expand-sm container-fluid nav-light" id="upnav" style="margin-top: -60px">
+        <div class="nav" style="max-height: 38px; min-height: 38px"><span>&thinsp;</span><button class="btn active nav-link nav-item" data-toggle="tab" onclick="tabClick(this.innerHTML)" href="#phm" id="bhm" style="text-align: center; width: 90px"><img
+                    src="https://image.flaticon.com/icons/svg/786/786121.svg"
+                    id="main-tab-img"
+                /> 主页</button><span>&nbsp;</span><button class="btn nav-link nav-item" data-toggle="tab" onclick="tabClick(this.innerHTML); rechange();" href="#pht" id="bht" style="text-align: center; width: 90px"><i class="fa fa-bookmark"></i> 问答</button><span>&nbsp;</span>
+            <button class="btn nav-link nav-item" data-toggle="tab" onclick="tabClick(this.innerHTML)" href="#phg" id="bhg" style="text-align: center; width: 90px"><i class="fa fa-check-circle"></i> 公告</button><span>&nbsp;</span><button class="btn nav-link nav-item"
+                data-toggle="tab" onclick="tabClick(this.innerHTML)" href="#pho" id="bho" style="text-align: center; width: 90px"><i class="fa fa-bars"></i> 其他</button></div>
+        <div id="line-main"></div>
+    </nav>
+    <div class="tab-content" id="mainTab">
+        <div class="container head-mc tab-pane fade active show" id="phm">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h2>关于</h2><br />
+                    <p class="p-mc">作者<span>Mr. 灵霜</span>的个人主页</p>
+                    <p class="p-mc">来到这里, 我们随时欢迎您......</p>
+                    <p class="p-mc">我们将为您打开帅锅知识的大门......</p><br /><br /><br />
+                    <h2>标签</h2><br />
+                    <ul class="list-group blockem-mc list-mc">
+                        <li class="list-group-item list-group-item-light"> 创始帅锅-FSG</li>
+                        <li class="list-group-item list-group-item-light">页面创造者</li>
+                    </ul><br /><br /><br /><br />
+                    <h2>工具</h2><br />
+                    <div class="btn-group">
+                        <div class="nav nav-tabs btn-group blockem-mc tab-type" role="tablist">
+                            <button class="nav-link btn btn-outline-light active" data-toggle="tab" onclick="tabClick(this.innerHTML)" href="#wk1" style="max-width: 70px"> 计算</button>
+                            <button class="nav-link btn btn-outline-light" data-toggle="tab" onclick="tabClick(this.innerHTML)" href="#wk2" style="max-width: 70px"> 搜索</button>
+                            <button class="nav-link btn btn-outline-light" data-toggle="tab" onclick="tabClick(this.innerHTML)" href="#wk3" style="max-width: 70px"> 进制</button>
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                        <div id="wk1" class="container tab-pane fade active show work-mc"><br />
+                            <div class="btn-group-vertical btn-group-width">
+                                <div class="input-group"><input type="text" class="form-control" id="display" style="width: 110px" />
+                                    <div class="input-group-append"><button onclick="document.getElementById('display').value='';console.log('ClearCalculator');" type="submit" class="btn btn-light" style="box-shadow: none !important"> C</button><button onclick="del();" type="submit"
+                                            class="btn btn-light" style="box-shadow: none !important"> B</button></div>
+                                </div>
+                                <div class="btn-group"><button onclick="get(7);" type="button" class="btn btn-light"> &nbsp;7&nbsp;</button><button onclick="get(8);" type="button" class="btn btn-light"> &nbsp;8&nbsp;</button><button onclick="get(9);" type="button" class="btn btn-light"> &nbsp;9&nbsp;</button>
+                                    <button onclick="get('+');" type="button" class="btn btn-light"> &nbsp;+&nbsp;</button>
+                                </div>
+                                <div class="btn-group"><button onclick="get(4);" type="button" class="btn btn-light"> &nbsp;4&nbsp;</button><button onclick="get(5);" type="button" class="btn btn-light"> &nbsp;5&nbsp;</button><button onclick="get(6);" type="button" class="btn btn-light"> &nbsp;6&nbsp;</button>
+                                    <button onclick="get('*');" type="button" class="btn btn-light"> &nbsp;*&nbsp;</button>
+                                </div>
+                                <div class="btn-group"><button onclick="get(1);" type="button" class="btn btn-light"> &nbsp;1&nbsp;</button><button onclick="get(2);" type="button" class="btn btn-light"> &nbsp;2&nbsp;</button><button onclick="get(3);" type="button" class="btn btn-light"> &nbsp;3&nbsp;</button>
+                                    <button onclick="get('-');" type="button" class="btn btn-light"> &nbsp;-&nbsp;</button>
+                                </div>
+                                <div class="btn-group"><button onclick="get(0);" type="button" class="btn btn-light"> 0</button><button onclick="get('.');" type="button" class="btn btn-light"> .</button><button onclick="get('/');" type="button" class="btn btn-light"> /</button>
+                                    <button onclick="calculates();" type="button" class="btn btn-light"> =</button>
+                                </div>
+                            </div><br />
+                        </div>
+                        <div id="wk2" class="container tab-pane fade work-mc"><br />
+                            <div class="input-group"><input type="text" class="form-control" id="search" />
+                                <div class="input-group-append"><button class="btn btn-light" target="_blank" type="submit" style="max-width: 50px; width: 50px; display: block" onclick="sec();"> Go</button></div>
+                            </div>
+                        </div>
+                        <div id="wk3" class="container tab-pane fade work-mc"><br />
+                            <div class="input-group mb-3"><input type="text" id="disInput1" class="form-control" />
+                                <div class="input-group-append"><button type="text" id="dis1" class="btn btn-light dropdown-toggle" data-toggle="dropdown"></button>
+                                    <div class="dropdown-menu"><button class="dropdown-item" onclick="if (bS == 2) bS = aS; aS = 2;"> 2进制</button><button class="dropdown-item" onclick="if (bS == 8) bS = aS; aS = 8;"> 8进制</button><button class="dropdown-item" onclick="if (bS == 10) bS = aS; aS = 10;"> 10进制</button>
+                                        <button class="dropdown-item" onclick="if (bS == 16) bS = aS; aS = 16;"> 16进制</button><button class="dropdown-item" onclick="if (bS == 32) bS = aS; aS = 32;"> 32进制</button></div>
+                                </div>
+                            </div>
+                            <div class="input-group mb-3"><input type="text" id="disInput2" class="form-control" readonly="readonly" />
+                                <div class="input-group-append"><button type="button" id="dis2" class="btn btn-light dropdown-toggle" data-toggle="dropdown"></button>
+                                    <div class="dropdown-menu"><button class="dropdown-item" onclick="if (aS == 2) aS = bS; bS = 2;"> 2进制</button><button class="dropdown-item" onclick="if (aS == 8) aS = bS; bS = 8;"> 8进制</button><button class="dropdown-item" onclick="if (aS == 10) aS = bS; bS = 10;"> 10进制</button>
+                                        <button class="dropdown-item" onclick="if (aS == 16) aS = bS; bS = 16;"> 16进制</button><button class="dropdown-item" onclick="if (aS == 32) aS = bS; bS = 32;"> 32进制</button></div>
+                                </div>
+                            </div><button onclick="changeInput();" class="btn btn-light btn-block"> 转换</button>
+                        </div>
+                    </div><br /><br /><br />
+                </div>
+                <div class="col-lg-4">
+                    <h2>诗集</h2><br />
+                    <div class="btn-group">
+                        <div class="nav nav-tabs btn-group blockem-mc tab-type" role="tablist"><button class="nav-link btn btn-outline-light active" data-toggle="tab" onclick="tabClick(this.innerHTML)" href="#menu1" style="max-width: 50px; width: 50px"> 1.</button><button class="nav-link btn btn-outline-light" data-toggle="tab"
+                                onclick="tabClick(this.innerHTML)" href="#menu2" style="max-width: 50px; width: 50px"> 2.</button><button class="nav-link btn btn-outline-light" data-toggle="tab" onclick="tabClick(this.innerHTML)" href="#menu3" style="max-width: 50px; width: 50px"> 3.</button>
+                            <button class="nav-link btn btn-outline-light" data-toggle="tab" onclick="tabClick(this.innerHTML)" href="#menun" style="max-width: 50px; width: 50px"> 4.</button>
+                        </div>
+                    </div>
+                    <div class="tab-content">
+                        <div id="menu1" class="container tab-pane fade active show"><br />
+                            <h4 class="text-mc">菜鸡之行, 必有帅锅之随</h4><br />
+                            <p>每当吃鸡我跳飞机, 郭滴都说废墟牛批,</p>
+                            <p>二号猛地来跳矿场, 废墟梦破灭真生气!</p>
+                            <p>郭滴滴看到直升机, 立马走过去滴滴滴,</p>
+                            <p>却被人机打成倒地, 幸运没坐回家飞机!</p>
+                            <p>三号好心把他扶起, 想让郭滴改掉恶习.</p>
+                            <p>我走到假车库楼上, 没人就跑上阴菜鸡.</p>
+                            <p>蹲下一阵走来走去, 真有敌人跑到这里.</p>
+                            <p>菜鸡推开面前大门, 拜佛让坐回家飞机.</p>
+                            <p>郭滴仍是死心不改, 跑过去就开直升机.</p>
+                            <p>结果有敌人拿RPG, 刚飞起就惨成盒哩!</p>
+                            <p>我走位跑到厕所里, 敌人你怎么这么皮.</p>
+                            <p>先把郭滴滴断了气, 不知我不救那菜鸡!</p>
+                            <p>郭滴滴成盒还语音, 我着急开起摩托离.</p>
+                            <p>郭滴非说坐直升机, 还说我车技不咋滴.</p>
+                            <p>郭滴为何总这么皮, 话筒里发菜鸡声音.</p>
+                            <p>打了这么多场游戏, 就没见过如此菜鸡!</p>
+                            <p>我气急退出等飞机, 郭滴求我别退游戏.</p>
+                            <p>无论我怎么样诉说, 郭滴定不合我愿意!</p>
+                            <p>光子您尊不要生气, 气会伤了您的肝脾,</p>
+                            <p>如果没有这个菜鸡, 我定不坐回家飞机!</p><br />
+                            <p class="p-time">时间: 2020.5.24 9:27</p><br /><br /><br />
+                        </div>
+                        <div id="menu2" class="container tab-pane fade"><br />
+                            <h3 class="text-mc">灵霜短诗集</h3><br />
+                            <p>灵霜浮兮打和平, 看得人们眼晶莹,</p>
+                            <p>同同子涵也上线, 丢脸老马手机屏.</p>
+                            <p>灵霜浮兮吃鸡开, 看得人们都热爱,</p>
+                            <p>同同子涵看到后, 打扰光子百年来.</p><br />
+                            <p class="p-time">时间: 2020.5.14 17:50</p><br />
+                            <p>郭滴滴, 郭滴滴, 起床穿衣坐飞机.</p>
+                            <p>灵霜哎, 灵霜哎, 每天都是这么帅.</p>
+                            <p>郭滴滴, 玩手机, 打开外挂还放屁.</p>
+                            <p>灵霜来, 吃鸡开, 砍死郭滴真自在.</p><br />
+                            <p class="p-time">时间: 2020.5.19 20:05</p><br />
+                            <p>同同子涵手机后, 原来要看视频欧.</p>
+                            <p>灵霜浮兮上线后, 突然来个一抖擞!</p>
+                            <p>马上出现一张手, 召唤超级大空投.</p>
+                            <p>灵霜真深藏不漏, 居然正在十连抽!</p><br />
+                            <p class="p-time">时间: 2020.5.23 18:14</p><br />
+                            <p>帅锅口罩灵霜戴, 灵霜快来吃鸡嗨.</p>
+                            <p>无论灵霜何处在, 灵霜总是这么帅!</p>
+                            <p>郭呆感觉挺牛掰, 灵霜眼中郭呆败.</p>
+                            <p>来打一局吃鸡嗨, 拍死郭呆真自在!</p><br />
+                            <p class="p-time">时间: 2020.5.27 17:23</p><br />
+                            <p>老八秘制小汉堡, 既这么爽, 还这么环保?</p>
+                            <p>吃完汉堡真是好, 免费送坟, 你说好不好?</p>
+                            <p>同同子涵真是牛, 吃奥里给, 真是好吃呦!</p>
+                            <p>不死免费送块铀, 合成核弹, 炸掉你的头!</p><br />
+                            <p class="p-time">时间: 2020.5.29 17:44</p><br />
+                            <p>一玩手游, 我才知道, 光子秘密, 独家爆料!</p>
+                            <p>主播在充, 光子在笑, 不充不氪, 玩家咆哮!</p>
+                            <p>一看端游, 我说真好, 蓝洞良心, 真不假嗷!</p>
+                            <p>配置挺烂, 画质挺高, 我滴CPU, 真在燃烧!</p><br />
+                            <p class="p-time">时间: 2020.6.6 18:54</p><br />
+                            <p>帅锅集团出新游, 同同子涵被爆头!</p>
+                            <p>霜线二帅共创造, 热度不高我磕头!</p>
+                            <p>灵霜不要太亲民, 不在线游也牛批!</p>
+                            <p>同同子涵不能比, 只能在一旁嘿嘿!</p><br />
+                            <p class="p-time">时间: 2020.6.18 16:59</p><br />
+                            <p>我N港难言, P城不求人,</p>
+                            <p>监狱刚枪王, 核电站之车神!</p>
+                            <p>不落地成盒, 永无敌战神,</p>
+                            <p>要想不死亡, 送我紫套一份!</p>
+                            <p>XQF已经跪, AG正乱抡,</p>
+                            <p>晚玉已倒地, 小班不像真人!</p>
+                            <p>S1季老玩家, 吃鸡第一人,</p>
+                            <p>看到我如此, 您千万别怨恨!</p><br />
+                            <p class="p-time">时间: 2020.6.30 16:25</p><br /><br /><br /><br />
+                        </div>
+                        <div id="menu3" class="container tab-pane fade"><br />
+                            <h3 class="text-mc">MC新说唱</h3><br />
+                            <p>大家好我是灵霜浮兮, 我又帅又打吃鸡!</p>
+                            <p>粉丝看到我又帅又吃鸡, 都说我实在是太牛批!</p>
+                            <p>每天打开这吃鸡嗨, 世界频道都说我牛掰.</p>
+                            <p>我忍受不住人们的澎湃, 先打开海岛欺负人哎!</p>
+                            <p>2号3号4号看到我来战, 都来跪求跳N港边岸.</p>
+                            <p>还没等我看完, 就都已经跟随我跳伞!</p>
+                            <p>跳伞到野区看见个菜鸡, 我一边打他一边为他着急,</p>
+                            <p>几枪结果变成助攻, 队友你抢人头真牛批!</p>
+                            <p>我要进击到N港中央, 开上小摩托真放荡.</p>
+                            <p>2人小队前来阻挡, 拿UZI让他回到回家飞机旁!</p>
+                            <p>N港真是人满为患, 居然有好几个小憨憨.</p>
+                            <p>拿起难用的短管霰弹, 居然淘汰了小憨憨!</p>
+                            <p>空投飘在天空中, 千人万人抢空投.</p>
+                            <p>听声辩位一个四人小队, 拿起AKM灭队成功!</p>
+                            <p>决赛圈即将刷新, 照应着人们激动的心.</p>
+                            <p>拿走空投中AWM, 打死远处的小菜鸡!</p>
+                            <p>决赛圈真是厄运点, 居然刷成了水圈.</p>
+                            <p>幸好我药多打上亿点, 还好好地站在岸边!</p>
+                            <p>菜鸡们呀都进入水圈内, 药多的我在岸边嘿嘿.</p>
+                            <p>拿起AWM一阵瞬狙, 1st非我莫属嘞!</p>
+                            <p>有人总是觉得我奇怪, 说我为什么觉得自己很帅!</p>
+                            <p>我只想告诉你: 你先看看你有多菜!</p>
+                            <p>Some people always think I'm weird,</p>
+                            <p>and said why I think I'm handsome,</p>
+                            <p>I just want to tell you:</p>
+                            <p>First look at how vegetable you are!</p>
+                            <p>why? why? why? 我怎么这么帅?</p>
+                            <p>high! high! high! 我怎么这么嗨!</p>
+                            <p>灵霜浮兮吃鸡~真是帅, 要不然你来比一比哎!</p>
+                            <p>Game for Peace真是嗨, 就是比烂鸡荣耀牛掰!</p>
+                            <p>......</p>
+                            <p>我就是如此的帅!~!~!~</p><br />
+                            <p class="p-time">时间: 2020.6.15 17:12</p><br /><br /><br />
+                        </div>
+                        <div id="menun" class="container tab-pane fade"><br />
+                            <h3 class="text-mc">暂无</h3><br />
+                            <p>正在持续更新中, 敬请期待......</p><br /><br /><br /><br />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h2>更新</h2><br />
+                    <div id="accordion">
+                        <div class="card collapsed" data-toggle="collapse" href="#collapseOne" id="ch1">
+                            <div class="card-header">1.0</div>
+                            <div id="collapseOne" class="collapse" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p>1.0.0-计算器最基础框架</p>
+                                    <p>1.0.2-计算程序基础完成</p>
+                                    <p>1.0.4-全局css修建成功</p>
+                                    <p>1.0.6-计算机计算修复bug</p>
+                                    <p>1.0.8-计算器样式改变</p>
+                                    <p>1.1.0-添加了基础主页</p>
+                                    <p>1.1.2-组建下方控制栏</p>
+                                    <p>1.1.4-添加登录系统</p>
+                                    <p>1.1.6-闲置了登录bug作废</p>
+                                    <p>1.1.8-组建了基础搜索框</p>
+                                    <p>1.2.0-组建了搜索基础框架</p>
+                                    <p>1.2.2-搜索可以支持百度</p>
+                                    <p>1.2.4-搜索框美化样式</p>
+                                    <p>1.2.6-添加into进入页面</p>
+                                    <p>1.2.8-搜索框支持多种引擎</p>
+                                    <p>1.3.0-修复控制栏鼠标指向bug</p>
+                                    <p>1.3.2-into页面按钮程序完善</p>
+                                    <p>1.3.4-修复搜索框同时打开页面bug</p>
+                                    <p>1.3.6-去背景色图标上传成功</p>
+                                    <p>1.3.8-添加into.html</p>
+                                    <p>1.4.0-修复行空格标签为 &lt;br /&gt;</p>
+                                    <p>1.4.2-into页面更名为start页面</p>
+                                    <p>1.4.4-start页面增加5秒后跳转</p>
+                                    <p>1.4.8-修复主页跳转问题</p>
+                                    <p>1.5.0-新增中文版本</p>
+                                    <p>1.5.2-修复返回bug</p>
+                                    <p>1.5.4-删除跳转按钮</p>
+                                    <p>1.5.6-添加FSGlogo</p>
+                                    <p>1.5.8-logo位置固定</p>
+                                    <p>1.6.0-logoCSS样式设置</p>
+                                    <p>1.6.2-logo添加链接</p>
+                                    <p>1.6.4-删除返回到start.html按钮</p>
+                                    <p>1.6.6-更改不需要的按钮</p>
+                                    <p>1.6.8-修复了一些小bug......</p>
+                                    <p>1.7.0-引用Bootstrap4, 诗集功能</p>
+                                    <p>1.7.2-添加诗集: 暂无</p>
+                                    <p>1.7.4-删除暂无诗集</p>
+                                    <p>1.7.6-图标文件改为网络存储</p>
+                                    <p>1.7.8-实用工具迁移-计算器</p>
+                                    <p>1.8.0-解决计算在不同页面上的兼容</p>
+                                    <p>1.8.2-实用工具迁移-搜索</p>
+                                    <p>1.8.4-其他搜索不兼容新页面</p>
+                                    <p>1.8.6-添加默认诗集: 诗集</p>
+                                    <p>1.8.8-修复搜索bug不兼容解决</p>
+                                    <p>1.9.0-修复找不到方法bug</p>
+                                    <p>1.9.2-为工具添加分页</p>
+                                    <p>1.9.4-解决分页失败bug</p>
+                                    <p>1.9.6-解决兼容性bug</p>
+                                    <p>1.9.8-更新栏正式开始使用</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card collapsed" data-toggle="collapse" href="#collapseTwo" id="ch2">
+                            <div class="card-header">2.0</div>
+                            <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p>2.0.0-更新栏添加折叠展开</p>
+                                    <p>2.0.2-搜索栏修改变长</p>
+                                    <p>2.0.4-计算器框长度设定最大值</p>
+                                    <p>2.0.6-计算器添加按钮C与B, 更实用</p>
+                                    <p>2.0.8-配色设置, 更美观</p>
+                                    <p>2.1.0-诗集栏按钮样式重新配置</p>
+                                    <p>2.1.2-更改分页, 升级为xhtml</p>
+                                    <p>2.1.4-文字取消不换行</p>
+                                    <p>2.1.6-文字添加隐形外框</p>
+                                    <p>2.1.8-更改按钮位置</p>
+                                    <p>2.2.0-添加css响应样式, 支持移动端</p>
+                                    <p>2.2.2-添加访客页面</p>
+                                    <p>2.2.4-解决移动端访客页面无法跳转</p>
+                                    <p>2.2.6-跳转淡入淡出</p>
+                                    <p>2.2.8-访客页面添加诗集</p>
+                                    <p>2.3.0-移动端访客页面按钮丢失bug</p>
+                                    <p>2.3.2-css样式更改浅色</p>
+                                    <p>2.3.4-解决导航文字不对齐问题</p>
+                                    <p>2.3.6-复制QQbug解决</p>
+                                    <p>2.3.8-移动端导航更改展开样式</p>
+                                    <p>2.4.0-PC端提高兼容性</p>
+                                    <p> 2.4.2-添加<span class="spb">C</span><span class="spr">s</span><span class="spy">e</span><span class="spg">p</span>其他产品</p>
+                                    <p>2.4.4-页面公告制度更改</p>
+                                    <p>2.4.6-计算器与搜索框提高兼容</p>
+                                    <p>2.4.8-页面末尾设置美观</p>
+                                    <p>2.5.0-全局字体重新调配</p>
+                                    <p>2.5.2-修复了一些小bug...</p>
+                                    <p>2.5.4-添加背景音乐</p>
+                                    <p>2.5.6-背景音乐显示器样式设置</p>
+                                    <p>2.5.8-音乐transition设置</p>
+                                    <p>2.6.0-兼容 <span class="span-moz">Apple Safari</span> : -webkit-transition</p>
+                                    <p>2.6.2-背景音乐网址调整</p>
+                                    <p>2.6.4-解决背景音乐不存在bug</p>
+                                    <p>2.6.6-解决音乐不能自动播放bug</p>
+                                    <p>2.6.8-添加起始模态框</p>
+                                    <p>2.7.0-解决模态框不能关闭bug</p>
+                                    <p>2.7.2-解决模态框不开启bug</p>
+                                    <p>2.7.4-transition更改秒数</p>
+                                    <p>2.7.6-标签显示从按钮改为列表</p>
+                                    <p>2.7.8-解决标签不兼容问题</p>
+                                    <p> 2.8.0-<span class="spb">C</span><span class="spr">t</span><span class="spy">e</span><span class="spb">s</span><span class="spg">t</span>网页项目开启</p>
+                                    <p> 2.8.2-<span class="spb">C</span><span class="spr">t</span><span class="spy">e</span><span class="spb">s</span><span class="spg">t</span>选择题加入</p>
+                                    <p> 2.8.4-<span class="spb">C</span><span class="spr">t</span><span class="spy">e</span><span class="spb">s</span><span class="spg">t</span>解决不能选择bug</p>
+                                    <p> 2.8.6-<span class="spb">C</span><span class="spr">t</span><span class="spy">e</span><span class="spb">s</span><span class="spg">t</span>解决选择重复bug</p>
+                                    <p> 2.8.8-<span class="spb">C</span><span class="spr">t</span><span class="spy">e</span><span class="spb">s</span><span class="spg">t</span>新增自定义美观按钮</p>
+                                    <p> 2.9.0-<span class="spb">C</span><span class="spr">t</span><span class="spy">e</span><span class="spb">s</span><span class="spg">t</span>新增计算分数</p>
+                                    <p> 2.9.2-<span class="spb">C</span><span class="spr">t</span><span class="spy">e</span><span class="spb">s</span><span class="spg">t</span>计算分数后删除所有答案</p>
+                                    <p> 2.9.4-<span class="spb">C</span><span class="spr">t</span><span class="spy">e</span><span class="spb">s</span><span class="spg">t</span>提高兼容性, 改回html</p>
+                                    <p> 2.9.6-<span class="spb">C</span><span class="spr">t</span><span class="spy">e</span><span class="spb">s</span><span class="spg">t</span>解决填空题计算失败bug</p>
+                                    <p> 2.9.8-接入<span class="spb">C</span><span class="spr">t</span><span class="spy">e</span><span class="spb">s</span><span class="spg">t</span>项目
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card collapsed" data-toggle="collapse" href="#collapseThree" id="ch3">
+                            <div class="card-header">3.0</div>
+                            <div id="collapseThree" class="collapse" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p> 3.0.0-更名为<span class="spb">C</span><span class="spr">s</span><span class="spy">e</span><span class="spg">p</span>, 原名<span class="spb">F</span><span class="spr">e</span><span class="spg">p</span></p>
+                                    <p>3.0.2-全部美化颜色</p>
+                                    <p>3.0.4-问答题选中样式自定义</p>
+                                    <p>3.0.6-按钮点击框取消</p>
+                                    <p>3.0.8-自定义新按钮外框</p>
+                                    <p>3.1.0-输入框取消点击外框</p>
+                                    <p>3.1.2-解决新版问答题框点击失败</p>
+                                    <p>3.1.4-给所有样式添加阴影</p>
+                                    <p>3.1.6-解决个别按钮阴影问题</p>
+                                    <p>3.1.8-新增主分页栏右侧网站图标</p>
+                                    <p>3.2.0-取消按钮横向伸长</p>
+                                    <p>3.2.2-解决计算器输出问题</p>
+                                    <p>3.2.4-背景音乐移动更美观</p>
+                                    <p>3.2.6-引入GoogleFonts字体</p>
+                                    <p>3.2.8-引入FontAwesome图标</p>
+                                    <p>3.3.0-图标添入主分页栏和底部栏</p>
+                                    <p> 3.3.2-<span class="spb">C</span><span class="spr">l</span><span class="spy">o</span><span class="spb">g</span><span class="spg">i</span><span class="spr">n</span>登录项目开始</p>
+                                    <p> 3.3.4-<span class="spb">C</span><span class="spr">l</span><span class="spy">o</span><span class="spb">g</span><span class="spg">i</span><span class="spr">n</span>添加简单登录功能</p>
+                                    <p> 3.3.6-<span class="spb">C</span><span class="spr">l</span><span class="spy">o</span><span class="spb">g</span><span class="spg">i</span><span class="spr">n</span>使用Cookie记录以前登录</p>
+                                    <p> 3.3.8-<span class="spb">C</span><span class="spr">l</span><span class="spy">o</span><span class="spb">g</span><span class="spg">i</span><span class="spr">n</span>把Cookie更改为localStorage记录</p>
+                                    <p> 3.4.0-<span class="spb">C</span><span class="spr">l</span><span class="spy">o</span><span class="spb">g</span><span class="spg">i</span><span class="spr">n</span>为登录用户和未登录用户提供界面</p>
+                                    <p> 3.4.2-<span class="spb">C</span><span class="spr">l</span><span class="spy">o</span><span class="spb">g</span><span class="spg">i</span><span class="spr">n</span>添加细节</p>
+                                    <p> 3.4.4-<span class="spb">C</span><span class="spr">l</span><span class="spy">o</span><span class="spb">g</span><span class="spg">i</span><span class="spr">n</span>CSS美化</p>
+                                    <p> 3.4.6-接入<span class="spb">C</span><span class="spr">l</span><span class="spy">o</span><span class="spb">g</span><span class="spg">i</span><span class="spr">n</span>项目</p>
+                                    <p>3.4.8-为span元素增加CSS</p>
+                                    <p>3.5.0-为特殊span元素增加四种颜色</p>
+                                    <p>3.5.2-span四种颜色协调</p>
+                                    <p>3.5.4-span四种颜色协调</p>
+                                    <p>3.5.6-普通按钮颜色<span>rgb(43, 125, 233)</span></p>
+                                    <p>3.5.8-浅色按钮颜色<span>rgb(230, 242, 255)</span></p>
+                                    <p>3.6.0-深色按钮颜色<span>rgb(43, 91, 154)</span></p>
+                                    <p>3.6.2-inputCSS美化</p>
+                                    <p>3.6.4-Card类美化</p>
+                                    <p>3.6.6-顶部栏下部添加线, 随按钮移动</p>
+                                    <p>3.6.8-顶部栏下部线美化并修改颜色</p>
+                                    <p> 3.7.0-<span class="spb">C</span><span class="spr">t</span><span class="spy">e</span><span class="spb">s</span><span class="spg">t</span>布局美化
+                                    </p>
+                                    <p> 3.7.2-<span class="spb">C</span><span class="spr">t</span><span class="spy">e</span><span class="spb">s</span><span class="spg">t</span>单选框美化</p>
+                                    <p> 3.7.6-<span class="spb">C</span><span class="spr">l</span><span class="spy">o</span><span class="spb">g</span><span class="spg">i</span><span class="spr">n</span>登陆后显示按钮</p>
+                                    <p>3.7.8-分页动画修改</p>
+                                    <p>3.8.0-滚动条美化</p>
+                                    <p>3.8.2-顶部超大屏幕宽度修改并改变主分页栏算法</p>
+                                    <p>3.8.4-分页栏颜色bug修改</p>
+                                    <p>3.8.6-主分页栏添加过渡属性</p>
+                                    <p>3.8.8-主分页栏添加过渡属性</p>
+                                    <p>3.9.0-Card类第2次美化, 标签美化</p>
+                                    <p>3.9.2-Card类内span颜色修改</p>
+                                    <p>3.9.4-添加回到顶部按钮</p>
+                                    <p>3.9.6-复制QQ号时添加打开QQ功能</p>
+                                    <p>3.9.8-GoogleFonts字体修改, 隐蔽QQ号</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card collapsed" data-toggle="collapse" href="#collapseFour" id="ch4">
+                            <div class="card-header">4.0</div>
+                            <div id="collapseFour" class="collapse" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p>4.0.0-修复较多bug</p>
+                                    <p>4.0.2-再次美化样式</p>
+                                    <p>4.0.4-修改不适合的内容</p>
+                                    <p>4.0.6-背景音乐加强聆听效果</p>
+                                    <p>4.0.8-为 <span class="span-moz">Mozilla Firefox</span> 加强兼容</p>
+                                    <p>4.1.0-修复Firefox滑动bug</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container head-mc tab-pane fade" id="pht">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h2>问答</h2><br />
+                    <h5>I. 选择题</h5>
+                    <from><br />
+                        <p>1.最贵兵团头像框多少兵团币:</p>
+                        <div><input type="radio" onchange="radioChange(this.id)" id="AcustomRadioa1" name="example" onclick="if (Aa) {A-=7.5}Aa=false;" class="normalRadio" /><label class="custom-control-label" for="AcustomRadioa1">2500兵团币</label></div>
+                        <div><input type="radio" onchange="radioChange(this.id)" id="AcustomRadioa2" name="example" onclick="if (Aa) {A-=7.5}Aa=false;" /><label class="custom-control-label" for="AcustomRadioa2">1000兵团币</label></div>
+                        <div><input type="radio" onchange="radioChange(this.id)" id="AcustomRadioat" name="example" onclick="if (!Aa) {A+=7.5}Aa=true;" /><label class="custom-control-label" for="AcustomRadioat">3000兵团币</label></div>
+                    </from>
+                    <from><br /><br />
+                        <p>2.经典地图有几个基地:</p>
+                        <div><input type="radio" onchange="radioChange(this.id)" id="AcustomRadiob1" name="example2" onclick="if (Ab) {A-=7.5}Ab=false;" class="normalRadio" /><label class="custom-control-label" for="AcustomRadiob1">5个基地</label></div>
+                        <div><input type="radio" onchange="radioChange(this.id)" id="AcustomRadiobt" name="example2" onclick="if (!Ab) {A+=7.5}Ab=true;" /><label class="custom-control-label" for="AcustomRadiobt">7个基地</label></div>
+                        <div><input type="radio" onchange="radioChange(this.id)" id="AcustomRadiob2" name="example2" onclick="if (Ab) {A-=7.5}Ab=false;" /><label class="custom-control-label" for="AcustomRadiob2">3个基地</label></div>
+                    </from>
+                    <from><br /><br />
+                        <p>3.什么大段位不分小段位:</p>
+                        <div><input type="radio" onchange="radioChange(this.id)" id="AcustomRadioct" name="example3" onclick="if (!Ac) {A+=7.5}Ac=true;" class="normalRadio" /><label class="custom-control-label" for="AcustomRadioct">无敌战神</label></div>
+                        <div><input type="radio" onchange="radioChange(this.id)" id="AcustomRadioc1" name="example3" onclick="if (Ac) {A-=7.5}Ac=false;" /><label class="custom-control-label" for="AcustomRadioc1">超级王牌</label></div>
+                        <div><input type="radio" onchange="radioChange(this.id)" id="AcustomRadioc2" name="example3" onclick="if (Ac) {A-=7.5}Ac=false;" /><label class="custom-control-label" for="AcustomRadioc2">荣耀皇冠</label></div>
+                    </from>
+                    <from><br /><br />
+                        <p>4.抽军需只能用金币或什么:</p>
+                        <div><input type="radio" onchange="radioChange(this.id)" id="AcustomRadiodt" name="example4" onclick="if (!Ad) {A+=7.5}Ad=true;" class="normalRadio" /><label class="custom-control-label" for="AcustomRadiodt">荣耀勋章</label></div>
+                        <div><input type="radio" onchange="radioChange(this.id)" id="AcustomRadiod1" name="example4" onclick="if (Ad) {A-=7.5}Ad=false;" /><label class="custom-control-label" for="AcustomRadiod1">服饰币</label></div>
+                        <div><input type="radio" onchange="radioChange(this.id)" id="AcustomRadiod2" name="example4" onclick="if (Ad) {A-=7.5}Ad=false;" /><label class="custom-control-label" for="AcustomRadiod2">物质币</label></div>
+                    </from>
+                </div>
+                <div class="col-lg-4"><br />
+                    <h5>II. 判断题</h5>
+                    <from><br />
+                        <p>5.某人没充rmb就获得荣耀勋章:</p>
+                        <div class="custom-control custom-radio custom-control-inline"><input type="radio" onchange="radioChange(this.id)" id="AcustomRadioet" name="example5" onclick="if (!Ae) {A+=7.5}Ae=true;" class="normalRadio" /><label class="custom-control-label" for="AcustomRadioet">对</label></div>
+                        <div class="custom-control custom-radio custom-control-inline"><input type="radio" onchange="radioChange(this.id)" id="AcustomRadioef" name="example5" onclick="if (Ae) {A-=7.5}Ae=false;" /><label class="custom-control-label" for="AcustomRadioef">错</label></div>
+                    </from>
+                    <from><br /><br />
+                        <p>6.历史上只有一次免费送套装:</p>
+                        <div class="custom-control custom-radio custom-control-inline"><input type="radio" onchange="radioChange(this.id)" id="AcustomRadioft" name="example6" class="normalRadio" onclick="if (Af) {A-=7.5}Af=false;" /><label class="custom-control-label" for="AcustomRadioft">对</label></div>
+                        <div class="custom-control custom-radio custom-control-inline"><input type="radio" onchange="radioChange(this.id)" id="AcustomRadioff" name="example6" onclick="if (!Af) {A+=7.5}Af=true;" /><label class="custom-control-label" for="AcustomRadioff">错</label></div>
+                    </from>
+                    <from><br /><br />
+                        <p>7.光子的游戏都能充rmb:</p>
+                        <div class="custom-control custom-radio custom-control-inline"><input type="radio" onchange="radioChange(this.id)" id="AcustomRadiogt" name="example7" onclick="if (Ag) {A-=7.5}Ag=false;" class="normalRadio" /><label class="custom-control-label" for="AcustomRadiogt">对</label></div>
+                        <div class="custom-control custom-radio custom-control-inline"><input type="radio" onchange="radioChange(this.id)" id="AcustomRadiogf" name="example7" onclick="if (!Ag) {A+=7.5}Ag=true;" /><label class="custom-control-label" for="AcustomRadiogf">错</label></div>
+                    </from>
+                    <from><br /><br />
+                        <p>8.一共有两个永久免费背景:</p>
+                        <div class="custom-control custom-radio custom-control-inline"><input type="radio" onchange="radioChange(this.id)" id="AcustomRadioht" name="example8" onclick="if (Ah) {A-=7.5}Ah=false;" class="normalRadio" /><label class="custom-control-label" for="AcustomRadioht">对</label></div>
+                        <div class="custom-control custom-radio custom-control-inline"><input type="radio" onchange="radioChange(this.id)" id="AcustomRadiohf" name="example8" onclick="if (!Ah) {A+=7.5}Ah=true;" /><label class="custom-control-label" for="AcustomRadiohf">错</label></div>
+                    </from>
+                    <from><br /><br />
+                        <p>9.团竞模式刚上线某人就能拿M249:</p>
+                        <div class="custom-control custom-radio custom-control-inline"><input type="radio" onchange="radioChange(this.id)" id="AcustomRadioit" name="example9" onclick="if (!Ai) {A+=7.5}Ai=true;" class="normalRadio" /><label class="custom-control-label" for="AcustomRadioit">对</label></div>
+                        <div class="custom-control custom-radio custom-control-inline"><input type="radio" onchange="radioChange(this.id)" id="AcustomRadioif" name="example9" onclick="if (Ai) {A-=7.5}Ai=false;" /><label class="custom-control-label" for="AcustomRadioif">错</label></div>
+                    </from>
+                </div>
+                <div class="col-lg-3"><br />
+                    <h5>III. 填空题</h5>
+                    <from><br />
+                        <p>10.这几把枪自带倍镜(不能重复):</p>
+                        <div class="form-group"><input class="form-control control-mc" id="Atk1" /></div>
+                        <div class="form-group"><input class="form-control control-mc" id="Atk2" /></div>
+                        <div class="form-group"><input class="form-control control-mc" id="Atk3" /></div>
+                    </from><br /><br />
+                    <div class="btn-div-mc" style="margin-left: 20px">
+                        <div class="work-mc"><button class="btn btn-light btn-modal-start" onclick="checkTest();"> 提交</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container head-mc tab-pane fade" id="phg">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h2>公告</h2><br />
+                    <h5>获取访客账户:</h5><br />
+                    <p>需满足以下至少2个要求: </p>
+                    <p>1. <span>诗</span>: 至少<span>4</span>句</p>
+                    <p>2. <span>说唱</span>: 至少<span>5</span>行</p>
+                    <p>3. <span>词</span>: 至少<span>30</span>字</p>
+                    <p>4. <span>集</span>: 至少<span>2</span>篇</p>
+                    <p>5. <span>工具</span>: 至少<span>50</span>行</p>
+                    <p>6. <span>赞助</span></p><br />
+                    <p>绝不更改作品!</p><br />
+                    <p> 联系QQ:&emsp;<big class="canselect text-secret">3364555156</big></p><br /><br />
+                    <div class="work-mc"><button class="btn btn-light btn-modal-start" id="aboutBtn" onclick="copyToClip('3364555156');"> 复制并打开</button></div><br /><br /><br />
+                </div>
+            </div>
+        </div>
+        <div class="container head-mc tab-pane fade" id="pho">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h2>关于</h2><br />
+                    <p class="p-mc">访客账户-同同子涵的申请页</p><br /><br /><br />
+                    <h2>标签</h2><br />
+                    <ul class="list-group blockem-mc list-mc">
+                        <li class="list-group-item list-group-item-light"> 管理帅锅-MSG</li>
+                        <li class="list-group-item list-group-item-light"> 钻石赞助商</li>
+                    </ul><br /><br /><br />
+                </div>
+                <div class="col-lg-5">
+                    <h2>诗集</h2><br />
+                    <div class="btn-group">
+                        <div class="nav nav-tabs btn-group blockem-mc tab-type" role="tablist"><button class="nav-link btn btn-outline-light active" data-toggle="tab" onclick="tabClick(this.innerHTML)" href="#ma1" style="max-width: 50px; width: 50px"> 1.</button><button class="nav-link btn btn-outline-light" data-toggle="tab"
+                                onclick="tabClick(this.innerHTML)" href="#ma2" style="max-width: 50px; width: 50px"> 2.</button><button class="nav-link btn btn-outline-light" data-toggle="tab" onclick="tabClick(this.innerHTML)" href="#man" style="max-width: 50px; width: 50px"> 3.</button></div>
+                    </div>
+                    <div class="tab-content">
+                        <div id="ma1" class="container tab-pane fade active show"><br />
+                            <h3 class="text-mc">NB郭嘚嘚</h3><br />
+                            <p>我看见郭嘚嘚在家憋的挺难受,</p>
+                            <p>每天幻想玩游戏用蛋蛋环游宇宙,</p>
+                            <p>今天带你们去趟图书馆,</p>
+                            <p>领略那蛋蛋的忧伤,</p>
+                            <p>我拿AWM在家躺,</p>
+                            <p>他拿P92游泥塘.</p>
+                            <p>我不想吃子弹而你却巴不得,</p>
+                            <p>争着抢着回老家领三秒无敌时间!</p><br />
+                            <p class="p-time">时间: 2020.5.19 18:24</p><br />
+                            <p>今天带你们出去旅游,</p>
+                            <p>不知道嘚嘚能不能接受,</p>
+                            <p>第一站去P城不知那有多少兽,</p>
+                            <p>郭嘚胆破肯定躲厕所,</p>
+                            <p>我和段呆战P城,</p>
+                            <p>段说在前我身后,</p>
+                            <p>我拿猛男和他秀!</p><br />
+                            <p class="p-time">时间: 2020.5.19 18:33</p><br />
+                            <p>今天咱出发去G港,</p>
+                            <p>后排乘客,</p>
+                            <p>你不要瞻前顾后.</p>
+                            <p>G港箱多不能秀,</p>
+                            <p>郭嘚只往箱中蹲,</p>
+                            <p>不知枪管己出洞!</p>
+                            <p>敌人拿把AK秀,</p>
+                            <p>郭嘚又去回家飞机!</p><br />
+                            <p class="p-time">时间: 2020.5.19 18:37</p><br />
+                            <p>各位仔细听我讲,</p>
+                            <p>郭上过蛋蛋排行榜,</p>
+                            <p>郭嘚游戏没有分量,</p>
+                            <p>他只会拿拳头往上莽!</p>
+                            <p>今天飘伞来G港,</p>
+                            <p>人少机多开心搜,</p>
+                            <p>殊不知AWM己瞄头,</p>
+                            <p>可是他怎能安心走?</p><br />
+                            <p class="p-time">时间: 2020.5.21 17:22</p><br />
+                            <p>大家慢慢听我讲,</p>
+                            <p>郭嘚嘚爱去自闭城,</p>
+                            <p>不要质疑他有几斤几两,</p>
+                            <p>跟他一起掉分特别爽!</p>
+                            <p>他说要去中心红楼,</p>
+                            <p>我想他一去不返,</p>
+                            <p>赶紧跑去三小仓,</p>
+                            <p>看他蛋蛋被砍爆</p><br />
+                            <p class="p-time">时间: 2020.5.21 17:28</p><br />
+                            <p>上机拍照下机尿尿,</p>
+                            <p>一看战绩你啥也不知道,</p>
+                            <p>只知那KD不足0.1,</p>
+                            <p>我想他连人机都打不过!</p>
+                            <p>青铜局呦,</p>
+                            <p>没有牌面,</p>
+                            <p>赛季手册一级皮肤啥也不知道,</p>
+                            <p>只须知道郭滴滴反人类!</p><br />
+                            <p class="p-time">时间: 2020.5.21 17:33</p><br />
+                            <p>今天郭嘚拿起82年的iPhone11,</p>
+                            <p>坐车去那和平精英的极限竞技,</p>
+                            <p>这种嘚嘚叫浪费票,</p>
+                            <p>我劝你赶紧回家睡觉!</p>
+                            <p>嘚嘚的动作你别猜,</p>
+                            <p>因为他的蛋蛋即将爆炸!</p><br />
+                            <p class="p-time">时间: 2020.5.23 18:35</p><br /><br /><br /><br />
+                        </div>
+                        <div id="ma2" class="container tab-pane fade"><br />
+                            <h3 class="text-mc">MC新说唱</h3><br />
+                            <p>大家好我是周帅锅, 粉丝都说我其实特别的有才,</p>
+                            <p>或许打游戏真的有点菜, 但是吹牛逼真的很厉害.</p>
+                            <p>只要G港一开干, 我滴队友马上少一半,</p>
+                            <p>4号灵霜浮兮成盒好遗憾. 还有2号陈菜鸡差点就完蛋.</p>
+                            <p>这种局面该咋办? 首先自己不能有遗憾,</p>
+                            <p>防止队友也把你怨, 只能使劲往上干.</p>
+                            <p>2号3号已吓破胆, 并且全队只有我勇敢,</p>
+                            <p>人头都被我包揽, 你大腿肯定也有点软.</p>
+                            <p>队友疯狂的一直喊, 你俩能不能让我缓一缓,</p>
+                            <p>我的处境其实特别惨, 怎么还对我不满?</p>
+                            <p>来吧来吧一起来吧, 上吧上吧一起上吧,</p>
+                            <p>6吗6吗问你6不6吧! 还有谁能治我啊!~</p>
+                            <p>四个队友活了仨, 还有一个是面瓜,</p>
+                            <p>灵霜浮兮怎能有脸笑哈哈, 在集装箱里让人送回家!</p>
+                            <p>我说后面有敌人, 队友马上他就丢了魂,</p>
+                            <p>大哥你这招是真滴神, 没事我自己慢慢抡.</p>
+                            <p>一枪一枪我准不准吧, 连打带补你气不气吧,</p>
+                            <p>前方到底咋滴啦, 其实我也不清楚啊.</p><br />
+                            <p class="p-time">时间: 2020.5.21 17:33</p><br /><br /><br /><br />
+                        </div>
+                        <div id="man" class="container tab-pane fade"><br />
+                            <h3 class="text-mc">暂无</h3><br />
+                            <p>正在持续更新中, 敬请期待......</p><br /><br /><br /><br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br /><br /><br />
+    <nav class="navbar navbar-expand-sm navbar-default" style="z-index: 200"><br /></nav>
+    <div id="window-drop"></div>
+    <div class="jumbotron text-center" style="min-height: 4.5em; margin: 0px">
+        <h6> Copyright <i class="fa fa-copyright" aria-hidden="true"></i> <span class="spb">C</span><span class="spr">s</span><span class="spy">e</span><span class="spg">p</span> 2020. All rights reserved</h6>
+        <h6>Version 4.1.0</h6>
+    </div>
+    <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+    <script defer="defer">
+        console.log("InitPage");
+        document.getElementById("bg-audio").volume = 0.5;
+        document.getElementById("window-drop").style.display = "none";
+
+        function isPC(a, b) {
+            var windowScreenWidth = document.body.clientWidth;
+            return windowScreenWidth > 800 ? a : b;
+        }
+
+        function get(value) {
+            document.getElementById("display").value += value;
+            console.log("Click: " + value);
+        }
+
+        function inStr(n, id) {
+            var s = document.getElementById(id).value;
+            return s.indexOf(n) != -1;
+        }
+
+        function calculates() {
+            if (inStr("段", "display")) {
+                document.getElementById("display").value = "段帅锅真帅";
+                console.log("HavePaintedEggshell");
+            } else if (document.getElementById("display").value == "段帅锅真帅") {
+                document.getElementById("display").value = "";
+            } else {
+                try {
+                    document.getElementById("display").value = eval(document.getElementById("display").value);
+                    console.log("Calculates: " + eval(document.getElementById("display").value));
+                } catch (err) {
+                    document.getElementById("display").value = "";
+                }
+                if (document.getElementById("display").value == "undefined") document.getElementById("display").value =
+                    "";
+                if (document.getElementById("display").value == "Infinity") document.getElementById("display").value =
+                    "";
+            }
+        }
+
+        function sec() {
+            if (inStr("段", "search")) {
+                document.getElementById("search").value = "段帅锅真帅";
+                console.log("HavePaintedEggshell");
+            }
+            if (document.getElementById("search").value == "") window.open(
+                "https://voice.baidu.com/act/newpneumonia/newpneumonia/?from=osari_pc_1");
+            else window.open("https://www.baidu.com/s?wd=" + document.getElementById("search").value);
+            console.log("Search : " + document.getElementById("search").value);
+        }
+
+        function del() {
+            value = document.getElementById("display").value;
+            document.getElementById("display").value = value.slice(0, value.length - 1);
+            console.log("Delete");
+        }
+        var aS = 10,
+            bS = 2;
+
+        function hex2int(hex) {
+            var len = hex.length,
+                a = new Array(len),
+                code;
+            for (var i = 0; i < len; i++) {
+                code = hex.charCodeAt(i);
+                if (48 <= code && code < 58) {
+                    code -= 48;
+                } else {
+                    code = (code & 0xdf) - 65 + 10;
+                }
+                a[i] = code;
+            }
+            return a.reduce(function(acc, c) {
+                acc = 16 * acc + c;
+                return acc;
+            }, 0);
+        }
+
+        function changeInput() {
+            var num = document.getElementById("disInput1").value;
+            var string = parseInt(num, aS).toString(bS);
+            if (aS == 16) string = hex2int(num).toString(bS);
+            document.getElementById("disInput2").value = string;
+            checkInput();
+        }
+
+        function checkInput() {
+            if (document.getElementById("disInput2").value == "NaN") document.getElementById("disInput2").value = "";
+            document.getElementById("dis1").innerHTML = aS + "进制";
+            document.getElementById("dis2").innerHTML = bS + "进制";
+        }
+        var copyI = false;
+
+        function copyToClip(content, val = true) {
+            if (copyI && String(content) != "3364555156") return;
+            copyI = true;
+            var aux = document.createElement("input");
+            aux.setAttribute("value", content);
+            document.body.appendChild(aux);
+            aux.select();
+            document.execCommand("copy");
+            document.body.removeChild(aux);
+            console.log("CopyAccount");
+            if (val) {
+                alert("复制成功");
+                if (!is_SG)
+                    window.open(
+                        "tencent://message/?uin=3364555156&Menu=yes& Service=300&sigT=42a1e5347953b64c5ff3980f8a6e644d4b31456cb0b6ac6b27663a3c4dd0f4aa14a543b1716f9d45"
+                    );
+            }
+        }
+
+        function musicInBrowserHandler() {
+            setTimeout(function() {
+                if (document.getElementById("bg-audio").paused) {
+                    document.getElementById("bg-audio").play();
+                    $("#musicTrans").fadeOut();
+                    $("#musicTrans2").fadeIn();
+                }
+            }, 750);
+            copyToClip("SET Csep", false);
+            document.removeEventListener("click", musicInBrowserHandler);
+        }
+        document.addEventListener("click", musicInBrowserHandler);
+        var flag = 1;
+        var scr = null;
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+        function scroll() {
+            scr = 1;
+            flag = flag;
+            scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            var nav = document.getElementById("upnav");
+            var tab = document.getElementById("mainTab");
+            var navTop = nav.offsetHeight + 168;
+            var dom = document.getElementsByClassName("navbar-default");
+            if (scrollTop > navTop) {
+                nav.style = "position:fixed;top:0px;";
+                tab.style = null;
+                tab.style = "margin-top:" + isPC(78, 43) + "px;";
+                $("#test").fadeIn(100);
+                if (flag == 1) {
+                    flag = 0;
+                    console.log("RaiseMainNav");
+                }
+                flag = 0;
+            } else {
+                nav.style = "margin-top:-60px;";
+                tab.style = null;
+                $("#test").fadeOut(100);
+                if (flag == 0) {
+                    flag = 1;
+                    console.log("DropMainNav");
+                }
+                flag = 1;
+            }
+        }
+        scroll();
+        document.onscroll = function() {
+            scroll();
+        };
+        document.onkeydown = document.onkeyup = function() {
+            var e = window.event || e;
+            var keycode = e.keyCode || e.which;
+            if (keycode == 17 || keycode == 18 || keycode == 16 || (keycode >= 112 && keycode <= 135) || keycode ==
+                9) {
+                e.returnValue = false;
+            }
+        };
+        document.oncontextmenu = function() {
+            return false;
+        };
+
+        function formatFloat(value, n) {
+            var f = Math.round(value * Math.pow(10, n)) / Math.pow(10, n);
+            var s = f.toString();
+            var rs = s.indexOf(".");
+            if (rs < 0 && n != 0) {
+                s += ".";
+            }
+            for (var i = s.length - s.indexOf("."); i <= n; i++) {
+                s += "0";
+            }
+            return s;
+        }
+
+        function tabClick(inner) {
+            console.log("GotoTab : " + inner);
+        }
+
+        function download() {
+            window.open("https://www.mozilla.org/zh-CN/firefox/new/");
+        }
+
+        var Aa, Ab, Ac, Ad, Ae, Af, Ag, Ah, Ai;
+        Aa = Ab = Ac = Ad = Ae = Af = Ag = Ah = Ai = false;
+        var A = 0,
+            flagReplace = 0;
+
+        function checkTest() {
+            flagReplace = 1;
+            theAll = A_AllCheck();
+            alert("您的得分为: " + theAll + "分");
+            console.log("Test : " + theAll);
+            returnClearCheck();
+        }
+
+        function A_AllCheck() {
+            var add = A,
+                a = document.getElementById("Atk1").value,
+                b = document.getElementById("Atk2").value,
+                c = document.getElementById("Atk3").value;
+            if (a == "VSS" || a == "Win94" || a == "十字弩") add += 10;
+            if ((b == "VSS" || b == "Win94" || b == "十字弩") && b != a) add += 10;
+            if ((c == "VSS" || c == "Win94" || c == "十字弩") && c != a && c != b) add += 10;
+            if (add == A + 30) add += 2.5;
+            return add;
+        }
+
+        function radioChange(id) {
+            console.log("ChangeRadio : " + id);
+        }
+
+        function returnClearCheck() {
+            document.getElementById("Atk1").value = document.getElementById("Atk2").value = document.getElementById(
+                    "Atk3")
+                .value = "";
+            rechange();
+            console.log("ClearCheck");
+        }
+        document.addEventListener("visibilitychange", function() {
+            if (document.visibilityState == "hidden") {
+                normal_title = document.title;
+                document.title = "您已打开Csep帅锅之门...";
+            } else {
+                document.title = "Csep 个人主页";
+            }
+        });
+
+        function clickModal() {
+            $("#myModal").modal("show");
+            testStorage(0);
+        }
+        var flag = null;
+        var wait2 = (wait1 = 0);
+        var is_SG = false;
+        setInterval(function() {
+            localStorage.setItem(user, titleCase(localStorage.getItem(user)));
+            uname = localStorage.getItem(user);
+            if (uname != null) {
+                var text = document.getElementById("user");
+                if (uname.toLowerCase() == "mr. 灵霜" || uname == "灵霜" || uname.toLowerCase() == "mr.灵霜" || uname
+                    .toLowerCase() == "mr灵霜") {
+                    text.innerText = "Nice! 欢迎Mr. 灵霜作者";
+                    localStorage.setItem(user, "Mr. 灵霜");
+                    is_SG = true;
+                    document.getElementById("aboutBtn").innerHTML = "复制";
+                } else text.innerText = "欢迎, " + uname;
+            }
+            document.body.style = "overflow-x:hidden; display:block";
+            var tab = document.getElementById("upnav").getElementsByTagName("div")[0];
+            var buttons = tab.getElementsByTagName("button");
+            for (var i = 0; i < buttons.length; i++) {
+                if (buttons[i].className.indexOf("active") != -1) {
+                    buttons[i].style.backgroundColor = btncolor[i];
+                    buttons[i].style.color = "white";
+                } else {
+                    buttons[i].style.backgroundColor = "rgb(248, 249, 250)";
+                    buttons[i].style.color = "black";
+                }
+            }
+            var tab_2d = document.getElementsByClassName("tab-type");
+            for (var i = 0; i < tab_2d.length; i++) {
+                var tab_2d_buttons = tab_2d[i].getElementsByTagName("button");
+                for (var j = 0; j < tab_2d_buttons.length; j++) {
+                    if (tab_2d_buttons[j].className.indexOf("active") != -1) {
+                        tab_2d_buttons[j].style.backgroundColor = "rgb(43, 125, 233)";
+                        tab_2d_buttons[j].style.color = "rgb(255,255,255)";
+                    } else {
+                        tab_2d_buttons[j].style.backgroundColor = "rgb(248, 249, 250)";
+                        tab_2d_buttons[j].style.color = "black";
+                    }
+                }
+            }
+            var music = document.getElementById("bg-audio");
+            if (music.paused && flag != 1) {
+                flag = 1;
+                console.log("BgAudioStatus : Pause");
+            }
+            if (!music.paused && flag != 0) {
+                flag = 0;
+                console.log("BgAudioStatus : Play");
+            }
+            if (wait1 == 0 && flag == 0 && document.getElementById("bg-audio").currentTime > 0) {
+                wait1 = 1;
+                console.log("BgAudioTime : " + formatFloat(document.getElementById("bg-audio").currentTime, 0) +
+                    " s");
+                setTimeout(function() {
+                    wait1 = 0;
+                }, 1000);
+            }
+            if (scr == 1 && wait2 == 0) {
+                wait2 = 1;
+                console.log("ScrollTop : " + formatFloat(scrollTop, 4) + " px");
+                setTimeout(function() {
+                    scr = wait2 = 0;
+                }, 500);
+            }
+            checkInput();
+        }, 1);
+        ! function() {
+            function n(n, e, t) {
+                return n.getAttribute(e) || t
+            }
+
+            function e(n) {
+                return document.getElementsByTagName(n)
+            }
+
+            function t() {
+                var t = e("script"),
+                    o = t.length,
+                    i = t[o - 1];
+                return {
+                    l: o,
+                    z: n(i, "zIndex", -1),
+                    o: n(i, "opacity", 1),
+                    c: n(i, "color", "43,125,233"),
+                    n: n(i, "count", 99)
+                }
+            }
+
+            function o() {
+                a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+                    c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body
+                    .clientHeight
+            }
+
+            function i() {
+                r.clearRect(0, 0, a, c);
+                var n, e, t, o, m, l;
+                s.forEach(function(i, x) {
+                    for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y <
+                        0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[
+                            e],
+                        null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
+                            l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i
+                                    .y -= .03 * m),
+                                t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle =
+                                "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r
+                                .stroke()))
+                }), x(i);
+            }
+            var a, c, u, m = document.createElement("canvas"),
+                d = t(),
+                l = "c_n" + d.l,
+                r = m.getContext("2d"),
+                x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window
+                .mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+                function(n) {
+                    window.setTimeout(n, 1e3 / 45);
+                },
+                w = Math.random,
+                y = {
+                    x: null,
+                    y: null,
+                    max: 2e4
+                };
+            m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0]
+                .appendChild(m), o(), window.onresize = o,
+                window.onmouseout = function() {
+                    y.x = null, y.y = null
+                };
+            for (var s = [], f = 0; d.n > f; f++) {
+                var h = w() * a,
+                    g = w() * c,
+                    v = 2 * w() - 1,
+                    p = 2 * w() - 1;
+                s.push({
+                    x: h,
+                    y: g,
+                    xa: v,
+                    ya: p,
+                    max: 6e3
+                })
+            }
+            u = s.concat([y]),
+                setTimeout(function() {
+                    i()
+                }, 100)
+        }();
+        var _extends = Object.assign || function(target) {
+            for (var i = 1; i < arguments.length; i++) {
+                if (window.CP.shouldStopExecution(2)) {
+                    break;
+                }
+                var source = arguments[i];
+                for (var key in source) {
+                    if (window.CP.shouldStopExecution(1)) {
+                        break;
+                    }
+                    if (Object.prototype.hasOwnProperty.call(source, key)) {
+                        target[key] = source[key];
+                    }
+                }
+                window.CP.exitedLoop(1);
+            }
+            window.CP.exitedLoop(2);
+            return target;
+        };
+        var OPTS = {
+            fill: 'none',
+            radius: 25,
+            strokeWidth: {
+                50: 0
+            },
+            scale: {
+                0: 1
+            },
+            angle: {
+                'rand(-35, -70)': 0
+            },
+            duration: 300,
+            left: 0,
+            top: 0,
+            easing: 'cubic.out'
+        };
+        var circle1 = new mojs.Shape(_extends({}, OPTS, {
+            stroke: '#4B8BF5',
+            zIndex: 100000
+        }));
+        var circle2 = new mojs.Shape(_extends({}, OPTS, {
+            radius: {
+                0: 15
+            },
+            strokeWidth: {
+                30: 0
+            },
+            stroke: '#5397EE',
+            delay: 'rand(75, 150)',
+            zIndex: 100000
+        }));
+        document.addEventListener('click', function(e) {
+            circle1.tune({
+                x: e.pageX,
+                y: e.pageY
+            }).replay();
+            circle2.tune({
+                x: e.pageX,
+                y: e.pageY
+            }).replay();
+        });
+    </script>
+</body>
+
+</html>
